@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
 
 var app = express();
-mongoose.connect('');
+// mongoose.connect('');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
