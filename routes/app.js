@@ -6,14 +6,17 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/task/:taskId/:name', function (req, res, next) {
+    var name = req.params.name || 'Someone';
+    var taskId = req.params.taskId || 12345;
     res.render('task', {
-        taskId: req.params.taskId,
-        name: req.params.name
+        taskId: taskId,
+        name: name
     });
 });
 
 router.post('/task', function (req, res, next) {
     var taskId = req.body.taskId;
+    var name = req.body.name;
     res.redirect('/task/' + taskId + '/' + name);
 });
 
