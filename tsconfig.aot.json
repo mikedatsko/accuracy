@@ -15,6 +15,9 @@
     "dist",
     "assets/app/polyfills.ts"
   ],
+  "filesGlob": [
+    "./assets/app/custom-typings.d.ts"
+  ],
 
   "angularCompilerOptions": {
     "skipMetadataEmit" : true

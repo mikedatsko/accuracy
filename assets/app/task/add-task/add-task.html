@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <input
+    type="hidden"
+    name="taskId"
+    value=""
+    [ngModel]="taskEdit?.taskId"
+    >
+
+  <div class="form-group">
+    <label for="name">Task name</label>
+    <input
+      type="text"
+      name="name"
+      value="Some name"
+      class="form-control"
+      [ngModel]="taskEdit?.name"
+      required
+      >
+  </div>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="!f.valid">Submit</button>
+</form>

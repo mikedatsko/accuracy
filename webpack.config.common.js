@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 
 module.exports = {
     entry: {
@@ -35,6 +36,9 @@ module.exports = {
             // The (\\|\/) piece accounts for path separators in *nix and Windows
             /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
             './src' // location of your src
-        )
+        ),
+        new WebpackBuildNotifierPlugin({
+            sound: false
+        })
     ]
 };
