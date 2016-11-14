@@ -26,6 +26,10 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
+.vertical-align-middle {
+  vertical-align: middle !important;
+}
+
 .loading {
   display: block;
   margin: 0 auto;
