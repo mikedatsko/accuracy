@@ -1,7 +1,21 @@
 var express = require('express');
 var router = express.Router();
+var jwt = require('jsonwebtoken');
 
 var Task = require('../models/task');
+
+router.use('/', function(req, res, next) {
+  jwt.verify(req.query.token, 'secret', function(err, decoded) {
+    if (err) {
+      return res.status(401).json({
+        title: 'Not authenticated',
+        error: err
+      });
+    }
+
+    next();
+  });
+});
 
 router.get('/', function(req, res, next) {
   Task.find()

@@ -5,8 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserRoutingModule } from './user.routing';
 
 import { UserCmp } from './user.cmp';
-import { SignupCmp } from './signup';
-import { SigninCmp } from './signin';
+import { SignupCmp, SignupApi } from './signup';
+import { SigninCmp, SigninApi } from './signin';
 import { SignoutCmp } from './signout';
 
 @NgModule({
@@ -22,6 +22,10 @@ import { SignoutCmp } from './signout';
     ReactiveFormsModule,
     
     UserRoutingModule
+  ],
+  providers: [
+    SignupApi,
+    SigninApi
   ]
 })
 export class UserModule {

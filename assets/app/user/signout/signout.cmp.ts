@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'user-signout',
@@ -9,7 +10,12 @@ import { Component } from "@angular/core";
   `
 })
 export class SignoutCmp {
-  onSignout() {
+  constructor(private router: Router) {
 
+  }
+
+  onSignout() {
+    localStorage.clear();
+    this.router.navigateByUrl('/user/signin');
   }
 }

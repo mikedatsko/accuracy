@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "PORT=8000 node ./bin/www",
-    "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
+    "watch": "concurrently \"npm run start\" \"npm run watch:build\"",
+    "watch:build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
     "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'assets/app/**/*.ngfactory.ts' 'assets/app/**/*.shim.ts'"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "debug": "~2.2.0",
     "express": "~4.14.0",
     "hbs": "~3.1.0",
+    "jsonwebtoken": "^7.1.9",
     "mongoose": "^4.6.7",
     "mongoose-unique-validator": "^1.0.2",
     "morgan": "~1.6.1",
@@ -40,6 +42,7 @@
     "angular2-router-loader": "^0.3.2",
     "angular2-template-loader": "^0.5.0",
     "awesome-typescript-loader": "^2.2.4",
+    "concurrently": "^3.1.0",
     "del-cli": "^0.2.0",
     "html-loader": "^0.4.4",
     "ng2-logger": "^0.1.21",
