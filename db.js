@@ -2,7 +2,6 @@
 var mongoose = require( 'mongoose' );
 
 // Build the connection string
-var dbURI = 'mongodb://accuracy:1234567890qazxswedc@ds149567.mlab.com:49567/accuracy';
 
 // Create the database connection
 mongoose.connect(dbURI);
